@@ -1,0 +1,19 @@
+{
+  "name": "finals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Heinrichfabs/3rdYr-FirstSem-BackEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Heinrichfabs/3rdYr-FirstSem-BackEnd/issues"
+  },
+  "homepage": "https://github.com/Heinrichfabs/3rdYr-FirstSem-BackEnd#readme"
+}
