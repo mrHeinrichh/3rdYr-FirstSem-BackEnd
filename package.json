@@ -15,5 +15,9 @@
     "url": "https://github.com/Heinrichfabs/3rdYr-FirstSem-BackEnd/issues"
   },
   "homepage": "https://github.com/Heinrichfabs/3rdYr-FirstSem-BackEnd#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "name": "^0.0.2",
+    "package": "^1.0.1"
+  }
 }
