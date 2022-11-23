@@ -44,13 +44,12 @@ router.get("/", (req, res) => {
 router.post("/", uploadOptions.single("uploads"), (req, res) => {
   const file = req.file;
 
-  // console.log(req.file)
   if (!file) return res.status(400).send("No image in the request");
 
   const fileName = file.filename;
   const basePath = `${req.protocol}://${req.get("host")}/public/uploads/`;
-  let imagePath = `${basePath}${fileName}`;
-  let sql = `INSERT INTO operator(name, contact_number, age, address, imagePath) VALUES(?,?,?,?,?)`;
+  let image_path = `${basePath}${fileName}`;
+  let sql = `INSERT INTO operator(name, contact_number, age, address, image_path) VALUES(?,?,?,?,?)`;
   console.log(fileName, sql);
   con.query(
     sql,
@@ -58,8 +57,8 @@ router.post("/", uploadOptions.single("uploads"), (req, res) => {
       req.body.name,
       req.body.contact_number,
       req.body.age,
-      req.address,
-      imagePath,
+      req.body.address,
+      image_path,
     ],
     (error, results, fields) => {
       if (error) {
@@ -89,8 +88,8 @@ router.put("/:id", uploadOptions.single("uploads"), (req, res) => {
 
   const fileName = file.filename;
   const basePath = `${req.protocol}://${req.get("host")}/public/uploads/`;
-  let imagePath = `${basePath}${fileName}`;
-  let sql = `UPDATE operator SET name = ?, contact_number = ?, age = ?, address = ?, imagePath = ? WHERE operator_id = ${req.params.id}`;
+  let image_path = `${basePath}${fileName}`;
+  let sql = `UPDATE operator SET name = ?, contact_number = ?, age = ?, address = ?, image_path = ? WHERE operator_id = ${req.params.id}`;
   console.log(fileName, sql);
   con.query(
     sql,
@@ -98,8 +97,8 @@ router.put("/:id", uploadOptions.single("uploads"), (req, res) => {
       req.body.name,
       req.body.contact_number,
       req.body.age,
-      req.address,
-      imagePath,
+      req.body.address,
+      image_path,
     ],
     (error, results, fields) => {
       if (error) {
